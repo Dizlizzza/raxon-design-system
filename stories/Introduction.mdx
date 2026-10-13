@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# Raxon Design System
+
+Дизайн-система сайта учебника **English for UX/UI & Product Designers**. Живёт в отдельном репозитории, сайт получает её файлы командой `npm run sync`.
+Источник правды — Figma-файл [Raxon Design System](https://www.figma.com/design/9lBTYbT9dGLGaxuvorSktA/Raxon-Design-System).
+Код повторяет его один к одному: те же имена токенов, компонентов, вариантов и размеров.
+
+## Как устроено
+
+- **Токены** — `css/tokens.css`, генерируются из Figma Variables (`npm run tokens`). Имя в Figma → CSS-переменная: `color/bg/surface` → `--color-bg-surface`.
+- **Компоненты** — `css/rx/<component>.css`, классы `rx-*`. Варианты Figma → модификаторы `--`, состояния → `.is-*` или ARIA-атрибуты.
+- **Поведение** — `js/rx-select.js`, `rx-match.js`, `rx-builder.js`.
+- Storybook подключает **те же файлы, которые копируются на сайт** (`css/rx.css`), поэтому всё, что вы видите здесь, совпадает с сайтом после синхронизации.
+
+## Панель инструментов
+
+- **Тема** — светлая или тёмная (`<html data-theme="dark">`).
+- **Часть** — цвет части учебника. Компоненты берут его из `--part` / `--part-soft`, которые задаёт класс `.rx-part-1 … .rx-part-6` на любом предке.
+
+## Разделы
+
+- **Foundations** — цвета, типографика, отступы и радиусы.
+- **Components** — компоненты по группам: Actions, Forms, Selection, Feedback, Content, Navigation, Layout, Exercises.
+
+Компоненты с пометкой «только в коде» (Match, Sentence Builder, Modal, прогресс в Nav Item) пока не перенесены в Figma.

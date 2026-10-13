@@ -1,0 +1,20 @@
+/* Sentence Builder — build an answer from word tiles. Code-only component: not in the Figma file yet.
+   Markup:
+   <div class="rx-builder">
+     <div class="rx-builder__answer" aria-label="Ваш ответ" data-placeholder="Tap the words in the right order"></div>
+     <div class="rx-builder__pool"><button type="button" class="rx-builder__tile">word</button> …</div>
+     <input type="hidden" class="rx-builder__value">
+   </div>
+   js/rx-builder.js puts placed words into __answer as .rx-builder__tile--placed. States: pool tile .is-used (empty slot) ·
+   result: .ok / .no on the question (.q) or .is-correct / .is-wrong on .rx-builder */
+.rx-builder{display:grid;gap:var(--spacing-s);margin-top:6px}
+.rx-builder__answer{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:46px;padding:6px 8px;border:1.5px dashed var(--color-border-default);border-radius:var(--radius-l);background:var(--color-bg-page)}
+.rx-builder__answer:empty::before{content:attr(data-placeholder);color:var(--color-text-secondary);font-size:14px;padding:0 4px}
+.rx-builder__pool{display:flex;flex-wrap:wrap;gap:6px}
+.rx-builder__tile{font:inherit;font-size:15px;line-height:1.3;padding:6px 12px;border-radius:var(--radius-m);border:1.5px solid var(--color-border-default);background:var(--color-bg-surface);color:var(--color-text-primary);cursor:pointer;transition:border-color .15s,background-color .15s}
+.rx-builder__tile:hover{border-color:var(--part)}
+.rx-builder__tile:focus-visible{outline:3px solid var(--color-border-focus-ring);outline-offset:1px}
+.rx-builder__tile--placed{border-color:var(--part);background:var(--part-soft)}
+.rx-builder__tile.is-used{color:transparent;background:transparent;border-style:dashed;cursor:default;pointer-events:none}
+.q.ok .rx-builder__answer,.rx-builder.is-correct .rx-builder__answer{border-style:solid;border-color:var(--color-border-success)}
+.q.no .rx-builder__answer,.rx-builder.is-wrong .rx-builder__answer{border-style:solid;border-color:var(--color-border-danger)}

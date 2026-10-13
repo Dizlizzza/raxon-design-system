@@ -1,0 +1,9 @@
+/* Table — Figma: Table / Vocabulary. <div class="rx-table"><table class="rx-table--vocab">…<tr class="rx-table__group">… */
+.rx-table{overflow-x:auto;border:1px solid var(--color-border-default);border-radius:var(--radius-xl)}
+.rx-table table{width:100%;border-collapse:collapse;font-size:15px}
+.rx-table th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-secondary);font-weight:600;background:var(--color-bg-page);padding:10px 14px}
+.rx-table td{padding:10px 14px;border-top:1px solid var(--color-border-default);vertical-align:top}
+.rx-table--vocab td:first-child{font-weight:600}
+.rx-table--vocab td:nth-child(2){font-family:var(--font-mono);font-size:13.5px;color:var(--color-text-secondary);white-space:nowrap}
+.rx-table--kv td:first-child{font-weight:600;width:30%}
+.rx-table__group td{background:var(--part-soft);color:var(--part);font-weight:600;font-size:13.5px}

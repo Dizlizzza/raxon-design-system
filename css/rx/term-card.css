@@ -1,0 +1,13 @@
+/* Term Card — Figma: Term Card (Known: False | True). Uses Badge and Toggle Button. */
+.rx-term-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--spacing-m);align-items:start;background:var(--color-bg-surface);border:1px solid var(--color-border-default);border-radius:16px;padding:var(--spacing-m) 18px}
+.rx-term-card[hidden]{display:none!important}
+.rx-term-card__main{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--spacing-xs) var(--spacing-ml);min-width:0}
+.rx-term-card__term{display:grid;gap:2px}
+.rx-term-card__term b{font-size:17px}
+.rx-term-card__ipa{font-family:var(--font-mono);font-size:13px;color:var(--color-text-secondary)}
+.rx-term-card__translation{font-size:15.5px;align-self:center}
+.rx-term-card__example{grid-column:1/-1;font-size:14.5px;color:var(--color-text-secondary);margin-top:6px;max-width:80ch}
+.rx-term-card__example strong{color:var(--color-text-primary);font-weight:600}
+.rx-term-card__meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.rx-term-card.is-known .rx-term-card__main{opacity:.6}
+@media (max-width:640px){.rx-term-card__main{grid-template-columns:1fr}.rx-term-card{grid-template-columns:1fr}.rx-term-card .rx-toggle-button{justify-self:start}}

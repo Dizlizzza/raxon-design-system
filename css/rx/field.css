@@ -1,0 +1,18 @@
+/* Field + Input + Textarea — Figma: Input (Size S | M; State Default | Focus | Filled | Error | Disabled), Textarea (M)
+   <div class="rx-field"><label class="rx-field__label" for="x">Email <span class="rx-field__optional">(необязательно)</span></label>
+     <input class="rx-input rx-input--m" id="x"><div class="rx-field__help"><span>Подсказка</span><span class="rx-field__counter">0/1000</span></div></div>
+   Error: .rx-field.is-error */
+.rx-field{display:grid;gap:6px}
+.rx-field__label{font-weight:600;font-size:15px}
+.rx-field__optional{font-weight:400;color:var(--color-text-secondary)}
+.rx-input,.rx-textarea{font:inherit;color:var(--color-text-primary);background:var(--color-bg-page);border:1.5px solid var(--color-border-default);width:100%}
+.rx-input--m,.rx-textarea{font-size:15.5px;border-radius:var(--radius-l);padding:11px 14px}
+.rx-input--s{font-size:16px;border-radius:var(--radius-m);padding:var(--spacing-s) var(--spacing-m);border-width:1px;background:var(--color-bg-surface)}
+.rx-textarea{resize:vertical}
+.rx-input:focus,.rx-textarea:focus{outline:none;border-color:var(--color-border-focus);box-shadow:0 0 0 3px var(--color-border-focus-ring)}
+.rx-input:disabled,.rx-textarea:disabled{opacity:.4}
+.rx-field.is-error .rx-input,.rx-field.is-error .rx-textarea{border-color:var(--color-border-danger)}
+.rx-field__help{display:flex;justify-content:space-between;gap:var(--spacing-sm);font-size:13.5px;color:var(--color-text-secondary)}
+.rx-field.is-error .rx-field__help span:first-child{color:var(--color-text-danger)}
+.rx-field__help a{color:var(--color-text-brand)}
+.rx-field__counter{font-size:13.5px;color:var(--color-text-secondary)}

@@ -1,0 +1,5 @@
+/* Footer — Figma: Footer. <footer class="rx-footer"><div class="rx-footer__inner wrap"><p>…</p><nav>…</nav></div></footer> */
+.rx-footer{padding-block:40px 56px;border-top:1px solid var(--color-border-default);margin-top:var(--spacing-3xl);color:var(--color-text-secondary);font-size:14px}
+.rx-footer__inner{display:flex;flex-wrap:wrap;gap:var(--spacing-m) var(--spacing-xl);justify-content:space-between}
+.rx-footer nav{display:flex;flex-wrap:wrap;gap:18px}
+.rx-footer a{text-decoration:none}

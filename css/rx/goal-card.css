@@ -1,0 +1,11 @@
+/* Goal Card — Figma: Goal Card (Status: Open | Soon)
+   <a class="rx-goal-card" href="chapter-1.html"><span class="rx-goal-card__chapter">Глава 1</span><h3 class="rx-goal-card__title">…</h3>
+     <span class="rx-goal-card__action">Открыть главу <span class="rx-goal-card__icon">→</span></span></a> */
+.rx-goal-card{display:flex;flex-direction:column;gap:var(--spacing-m);justify-content:space-between;min-height:168px;padding:var(--spacing-ml);border-radius:var(--radius-2xl);background:var(--part-soft);text-decoration:none;color:var(--color-text-primary);transition:transform .2s}
+.rx-goal-card:hover{transform:translateY(-3px)}
+.rx-goal-card__chapter{font-size:12px;font-weight:600;color:var(--part);letter-spacing:.06em;text-transform:uppercase}
+.rx-goal-card__title{font-size:19px}
+.rx-goal-card__action{display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--part)}
+.rx-goal-card__icon{width:40px;height:40px;border-radius:var(--radius-l);background:var(--part);color:var(--color-bg-surface);display:grid;place-items:center}
+.rx-goal-card.is-soon{opacity:.62}
+.rx-goal-card.is-soon:hover{transform:none}

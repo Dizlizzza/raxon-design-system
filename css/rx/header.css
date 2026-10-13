@@ -1,0 +1,13 @@
+/* Header + Logo — Figma: Header, Logo
+   <header class="rx-header"><div class="rx-header__inner wrap"><a class="rx-logo" href="index.html"><i class="rx-logo__mark">Aa</i>UX/UI English</a>
+     <nav class="rx-header__menu">…</nav><div class="rx-header__actions">…buttons…</div></div></header> */
+.rx-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--color-bg-page) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--color-border-default)}
+.rx-header__inner{display:flex;align-items:center;gap:var(--spacing-l);height:68px}
+.rx-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:16px;text-decoration:none}
+.rx-logo__mark{width:30px;height:30px;border-radius:9px;background:var(--color-bg-brand);color:var(--color-text-on-brand);display:grid;place-items:center;font-style:normal;font-size:13px}
+.rx-header__menu{display:flex;gap:22px;margin-left:var(--spacing-sm)}
+.rx-header__menu a{text-decoration:none;color:var(--color-text-secondary);font-weight:500;font-size:15px}
+.rx-header__menu a:hover{color:var(--color-text-primary)}
+.rx-header__actions{margin-left:auto;display:flex;gap:10px;align-items:center}
+@media (max-width:860px){.rx-header__menu{display:none}}
+@media (max-width:420px){.rx-header__actions .rx-button--text{display:none}}

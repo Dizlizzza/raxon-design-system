@@ -1,0 +1,5 @@
+/* Card — Figma: Card / Feature (Size: S | M). <article class="rx-card rx-card--m"><span class="rx-card__eyebrow">…</span><h3>…</h3><p>…</p></article> */
+.rx-card{background:var(--color-bg-surface);border:1px solid var(--color-border-default);display:grid;align-content:start}
+.rx-card--m{border-radius:var(--radius-2xl);padding:var(--spacing-l);gap:10px}
+.rx-card--s{border-radius:var(--radius-l);padding:var(--spacing-l);gap:var(--spacing-s)}
+.rx-card__eyebrow{font:var(--text-eyebrow);letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-brand)}

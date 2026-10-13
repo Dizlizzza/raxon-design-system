@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Designer">
+  <defs><clipPath id="c"><circle cx="40" cy="40" r="40"/></clipPath></defs>
+  <g clip-path="url(#c)">
+    <rect width="80" height="80" fill="#E3E8FF"/>
+    <path d="M10 84c2-17 14-26 30-26s28 9 30 26z" fill="#3D5AFE"/>
+    <path d="M33 52h14v9a7 7 0 0 1-14 0z" fill="#E9B48F"/>
+    <circle cx="40" cy="22" r="8" fill="#2A2E45"/>
+    <ellipse cx="40" cy="40" rx="14" ry="15" fill="#F4C9A6"/>
+    <path d="M26 40c-1-12 6-19 14-19s15 7 14 19c-3-6-9-9-14-9s-11 3-14 9z" fill="#2A2E45"/>
+    <g fill="none" stroke="#2A2E45" stroke-width="1.8"><circle cx="34" cy="41" r="4"/><circle cx="46" cy="41" r="4"/><path d="M38 41h4"/></g>
+    <path d="M36 48q4 3 8 0" fill="none" stroke="#B5674B" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</svg>

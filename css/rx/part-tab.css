@@ -1,0 +1,8 @@
+/* Part Tab — Figma: Part Tab (State: Default | Selected | Soon). Color via .rx-part-N on the tab.
+   <button class="rx-part-tab rx-part-2" role="tab" aria-selected="false"><span class="rx-part-tab__number">Часть II</span><span class="rx-part-tab__name">UX Design</span></button> */
+.rx-part-tab{text-align:left;border:2px solid transparent;background:var(--part-soft);border-radius:var(--radius-xl);padding:14px;cursor:pointer;font-family:var(--font-body);color:var(--color-text-primary);display:grid;gap:6px;min-width:0}
+.rx-part-tab__number{font:var(--text-display-xs);color:var(--part)}
+.rx-part-tab__name{font-size:13.5px;font-weight:600;line-height:1.3}
+.rx-part-tab[aria-selected="true"]{border-color:var(--part)}
+.rx-part-tab.is-soon{opacity:.55}
+.rx-part-tab:focus-visible{outline:3px solid var(--color-border-focus);outline-offset:2px}

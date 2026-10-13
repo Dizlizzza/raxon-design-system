@@ -1,0 +1,8 @@
+/* Toggle Button — Figma: Toggle Button (Tone: Brand | Success; Pressed: False | True)
+   <button class="rx-toggle-button rx-toggle-button--brand" aria-pressed="false">Отметить раздел как пройденный</button> */
+.rx-toggle-button{font:var(--text-label-m);background:transparent;border:1.5px solid;border-radius:10px;cursor:pointer;white-space:nowrap}
+.rx-toggle-button:focus-visible{outline:3px solid var(--part);outline-offset:2px}
+.rx-toggle-button--brand{color:var(--part);border-color:var(--part);padding:var(--spacing-s) 14px}
+.rx-toggle-button--brand[aria-pressed="true"]{background:var(--part);color:var(--color-bg-surface)}
+.rx-toggle-button--success{color:var(--color-text-secondary);border-color:var(--color-border-default);padding:7px var(--spacing-sm)}
+.rx-toggle-button--success[aria-pressed="true"]{background:var(--color-bg-success);border-color:var(--color-border-success);color:var(--color-bg-surface)}

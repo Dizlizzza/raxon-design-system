@@ -1,0 +1,11 @@
+/* Radio Card — Figma: Radio Card (State: Default | Hover | Selected | Correct | Wrong)
+   <label class="rx-radio-card"><input class="rx-radio-card__input" type="radio" name="q1"><span class="rx-radio-card__label">Answer</span></label> */
+.rx-radio-card{display:block;position:relative;cursor:pointer}
+.rx-radio-card__input{position:absolute;opacity:0;pointer-events:none}
+.rx-radio-card__label{display:block;border:1.5px solid var(--color-border-default);border-radius:var(--radius-l);padding:10px 14px;line-height:1.45}
+.rx-radio-card:hover .rx-radio-card__label{border-color:var(--color-border-strong)}
+.rx-radio-card__input:checked+.rx-radio-card__label{border-color:var(--part);background:var(--part-soft)}
+.rx-radio-card__input:focus-visible+.rx-radio-card__label{outline:3px solid var(--part);outline-offset:2px}
+.rx-radio-card.is-correct .rx-radio-card__input:checked+.rx-radio-card__label{border-color:var(--color-border-success);background:var(--color-bg-success-soft)}
+.rx-radio-card.is-wrong .rx-radio-card__input:checked+.rx-radio-card__label{border-color:var(--color-border-danger);background:var(--color-bg-danger-soft)}
+.rx-radio-group{display:grid;gap:var(--spacing-s)}

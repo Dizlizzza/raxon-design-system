@@ -1,0 +1,8 @@
+/* Inline Field — Figma: Inline Field (Type: Input | Select; State: Default | Focus | Correct | Wrong)
+   Gap inside a sentence: <input class="rx-inline-field"> / <select class="rx-inline-field rx-inline-field--select">; result: .is-correct / .is-wrong */
+.rx-inline-field{font:inherit;font-size:15px;color:var(--color-text-primary);background:var(--color-bg-page);border:0;border-bottom:2px solid var(--color-border-default);border-radius:6px 6px 0 0;padding:2px var(--spacing-s);margin:0 var(--spacing-xs);min-width:120px;width:auto;max-width:100%}
+.rx-inline-field:focus{outline:none;border-bottom-color:var(--part);background:var(--part-soft)}
+.rx-inline-field--select{font-size:14.5px;padding:var(--spacing-xs) 6px;min-width:0;margin:0}
+.rx-inline-field--select:focus{outline:2px solid var(--part)}
+.rx-inline-field.is-correct{border-bottom-color:var(--color-border-success);background:var(--color-bg-success-soft)}
+.rx-inline-field.is-wrong{border-bottom-color:var(--color-border-danger);background:var(--color-bg-danger-soft)}

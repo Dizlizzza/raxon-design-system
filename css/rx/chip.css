@@ -1,0 +1,15 @@
+/* Chip — Figma: Chip (Selected: False | True; State: Default | Hover | Focus | Disabled)
+   Choice:  <label class="rx-chip"><input class="rx-chip__input" type="radio" name="x"><span class="rx-chip__label">Вопрос</span></label>
+   Filter:  <button class="rx-chip" aria-pressed="true"><span class="rx-chip__label">Гл. 1</span></button> */
+.rx-chip{display:inline-flex;position:relative;font-family:var(--font-body);cursor:pointer;background:none;border:0;padding:0;color:inherit;flex:none}
+.rx-chip__input{position:absolute;opacity:0;pointer-events:none}
+.rx-chip__label{display:inline-block;border:1.5px solid var(--color-border-default);border-radius:var(--radius-full);padding:6px 14px;font-size:14.5px;line-height:1.4;color:var(--color-text-primary);background:var(--chip-bg,transparent)}
+.rx-chip:hover .rx-chip__label{border-color:var(--color-border-strong)}
+.rx-chip__input:checked+.rx-chip__label,.rx-chip[aria-pressed="true"] .rx-chip__label{border-color:var(--part);background:var(--part-soft);color:var(--part);font-weight:600}
+.rx-chip__input:focus-visible+.rx-chip__label,.rx-chip:focus-visible .rx-chip__label{outline:3px solid var(--part);outline-offset:2px}
+.rx-chip:focus-visible{outline:none}
+.rx-chip__input:disabled+.rx-chip__label,.rx-chip:disabled .rx-chip__label{opacity:.4;cursor:default}
+/* Result states inside a checked question (final test) */
+.rx-chip.is-correct .rx-chip__input:checked+.rx-chip__label{border-color:var(--color-border-success);background:var(--color-bg-success-soft);color:var(--color-text-primary)}
+.rx-chip.is-wrong .rx-chip__input:checked+.rx-chip__label{border-color:var(--color-border-danger);background:var(--color-bg-danger-soft);color:var(--color-text-primary)}
+.rx-chip-group{display:flex;flex-wrap:wrap;gap:var(--spacing-s)}

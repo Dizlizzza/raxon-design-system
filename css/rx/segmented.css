@@ -1,0 +1,10 @@
+/* Segmented — Figma: Segmented (Tone: Neutral | Brand) + Segmented / Item (Selected)
+   <div class="rx-segmented rx-segmented--neutral" role="group"><button class="rx-segmented__item" aria-pressed="true">A</button>…</div> */
+.rx-segmented{display:inline-flex;flex-wrap:wrap;gap:var(--spacing-xs);padding:var(--spacing-xs);border:1px solid var(--color-border-default);border-radius:var(--radius-l)}
+.rx-segmented--neutral{background:var(--color-bg-page)}
+.rx-segmented--brand{background:var(--color-bg-surface)}
+.rx-segmented__item{border:0;background:transparent;font:var(--text-label-m);padding:var(--spacing-s) 14px;border-radius:9px;cursor:pointer;color:var(--color-text-secondary)}
+.rx-segmented__item:focus-visible{outline:3px solid var(--part);outline-offset:2px}
+.rx-segmented--neutral .rx-segmented__item[aria-pressed="true"]{background:var(--color-bg-surface);color:var(--color-text-primary);box-shadow:var(--elevation-raised)}
+.rx-segmented--brand .rx-segmented__item[aria-pressed="true"]{background:var(--part-soft);color:var(--part)}
+.rx-segmented--brand .rx-segmented__item{padding:7px var(--spacing-sm)}

@@ -1,0 +1,30 @@
+/* Raxon base: reset, page defaults, part color context, icons. Depends on tokens.css */
+*{box-sizing:border-box}
+body{background:var(--color-bg-page);color:var(--color-text-primary);font:var(--text-body-m);margin:0}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h3{font:var(--text-heading-m)}
+/* Part color context: components that follow the textbook part color read --part / --part-soft.
+   Put .rx-part-1 … .rx-part-6 on any ancestor (page, section, card). Default = part 1. */
+:root,.rx-part-1{--part:var(--color-part-1);--part-soft:var(--color-part-1-soft)}
+.rx-part-2{--part:var(--color-part-2);--part-soft:var(--color-part-2-soft)}
+.rx-part-3{--part:var(--color-part-3);--part-soft:var(--color-part-3-soft)}
+.rx-part-4{--part:var(--color-part-4);--part-soft:var(--color-part-4-soft)}
+.rx-part-5{--part:var(--color-part-5);--part-soft:var(--color-part-5-soft)}
+.rx-part-6{--part:var(--color-part-6);--part-soft:var(--color-part-6-soft)}
+/* Icons used as CSS backgrounds (Figma: Icon / Chevron-down, Check) */
+:root{
+  --rx-icon-chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1.5 1.5 6 6l4.5-4.5' fill='none' stroke='%23141A2E' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --rx-icon-check-on-brand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1.5 5 4.5 8 10.5 1.5' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --rx-icon-chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1.5 1.5 6 6l4.5-4.5' fill='none' stroke='%23EEF0F7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --rx-icon-check-on-brand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1.5 5 4.5 8 10.5 1.5' fill='none' stroke='%230E1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}}
+:root[data-theme="dark"]{
+  --rx-icon-chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1.5 1.5 6 6l4.5-4.5' fill='none' stroke='%23EEF0F7' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --rx-icon-check-on-brand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1.5 5 4.5 8 10.5 1.5' fill='none' stroke='%230E1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
+/* Shared focus ring */
+.rx-focus-ring:focus-visible{outline:3px solid var(--color-border-focus);outline-offset:2px}
+.rx-visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

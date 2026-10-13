@@ -1,0 +1,11 @@
+/* Alert — Figma: Alert (Tone: Success | Danger; Title: False | True)
+   <div class="rx-alert rx-alert--success" role="status">Текст</div>
+   <div class="rx-alert rx-alert--danger rx-alert--titled"><span class="rx-alert__title">Неудачно</span><p>…</p></div> */
+.rx-alert{font-size:15px;padding:var(--spacing-sm) 14px;border-radius:var(--radius-l);color:var(--color-text-primary)}
+.rx-alert--success{background:var(--color-bg-success-soft)}
+.rx-alert--danger{background:var(--color-bg-danger-soft)}
+.rx-alert--titled{border-radius:var(--radius-xl);padding:var(--spacing-m);display:grid;gap:6px}
+.rx-alert--titled p{font-size:17px}
+.rx-alert__title{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.rx-alert--success .rx-alert__title{color:var(--color-text-success)}
+.rx-alert--danger .rx-alert__title{color:var(--color-text-danger)}

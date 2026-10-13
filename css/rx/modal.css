@@ -1,0 +1,22 @@
+/* Modal — dialog window. Code-only component: not in the Figma file yet.
+   <dialog class="rx-modal"><div class="rx-modal__box"><button class="rx-modal__close" aria-label="Закрыть">×</button>
+     <span class="rx-modal__icon">…</span><h2 class="rx-modal__title">…</h2><p>…</p><div class="rx-modal__actions">buttons</div></div></dialog>
+   Opened with dialog.showModal(); closes on ×, Esc and a click on the backdrop. */
+.rx-modal{border:0;padding:0;background:transparent;max-width:min(480px,calc(100% - 32px));width:100%;color:var(--color-text-primary)}
+.rx-modal::backdrop{background:rgb(20 26 46 / .45);backdrop-filter:blur(2px)}
+.rx-modal[open]{animation:rx-modal-in .18s ease-out}
+@keyframes rx-modal-in{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.rx-modal__box{position:relative;background:var(--color-bg-surface);border-radius:var(--radius-2xl);padding:var(--spacing-xl) var(--spacing-l) var(--spacing-l);display:grid;gap:var(--spacing-sm);box-shadow:var(--elevation-card),0 0 0 1px var(--color-border-default);font-family:var(--font-body)}
+.rx-modal__close{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:var(--color-text-secondary);font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.rx-modal__close:hover{background:var(--color-bg-pressed);color:var(--color-text-primary)}
+.rx-modal__close:focus-visible{outline:3px solid var(--color-border-focus-ring)}
+.rx-modal__icon{width:48px;height:48px;border-radius:14px;background:var(--color-bg-brand-soft);color:var(--color-bg-brand);display:grid;place-items:center}
+.rx-modal__icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rx-modal__title{margin:4px 0 0;font:700 22px/1.25 var(--font-display);padding-right:28px}
+.rx-modal__box p{margin:0;font-size:15.5px;line-height:1.5;color:var(--color-text-secondary)}
+.rx-modal__list{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px;line-height:1.4}
+.rx-modal__list li{display:flex;gap:10px;align-items:flex-start}
+.rx-modal__list li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--color-bg-brand-soft);color:var(--color-bg-brand);font-size:12px;font-weight:700;display:grid;place-items:center;margin-top:1px}
+.rx-modal__note{font-size:14px!important;background:var(--color-bg-page);border-radius:var(--radius-l);padding:10px 12px}
+.rx-modal__actions{display:flex;flex-wrap:wrap;gap:var(--spacing-s);margin-top:4px}
+@media (max-width:480px){.rx-modal__box{padding:var(--spacing-l) var(--spacing-m) var(--spacing-m)}.rx-modal__actions .rx-button{flex:1 1 100%;justify-content:center}}

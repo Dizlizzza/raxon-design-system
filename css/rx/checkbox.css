@@ -1,0 +1,13 @@
+/* Checkbox — Figma: Checkbox (Checked: Unchecked | Checked | Indeterminate; State …). 20px box.
+   <label class="rx-checkbox"><input class="rx-checkbox__input" type="checkbox"><span class="rx-checkbox__label">Текст</span></label> */
+.rx-checkbox{display:inline-flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:14.5px;color:var(--color-text-primary)}
+.rx-checkbox__input{appearance:none;-webkit-appearance:none;flex:none;width:20px;height:20px;margin:1px 0 0;border:1.5px solid var(--color-border-default);border-radius:var(--radius-s);background:var(--color-bg-surface) no-repeat center/12px 10px;cursor:pointer}
+.rx-checkbox__input:hover{border-color:var(--color-border-strong)}
+.rx-checkbox__input:checked{background-color:var(--part);border-color:var(--part);background-image:var(--rx-icon-check-on-brand)}
+.rx-checkbox__input:indeterminate{background-color:var(--part);border-color:var(--part)}
+.rx-checkbox__input:focus-visible{outline:3px solid var(--color-border-focus-ring);outline-offset:1px;border-color:var(--part)}
+.rx-checkbox__input:disabled{opacity:.4;cursor:default}
+.rx-checkbox--muted{color:var(--color-text-secondary);font-size:14px;align-items:center}
+.rx-checkbox--muted .rx-checkbox__input{margin:0}
+.rx-checkbox.is-error .rx-checkbox__label{color:var(--color-text-danger)}
+.rx-checkbox__label a{color:var(--color-text-brand)}

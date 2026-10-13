@@ -1,0 +1,5 @@
+/* Progress — Figma: Progress (Size: S 6px | M 8px). <div class="rx-progress rx-progress--m"><span class="rx-progress__bar" style="width:38%"></span></div> */
+.rx-progress{border-radius:var(--radius-full);overflow:hidden}
+.rx-progress--s{height:6px;background:var(--color-bg-pressed)}
+.rx-progress--m{height:8px;background:var(--color-bg-surface)}
+.rx-progress__bar{display:block;height:100%;width:0;background:var(--part);transition:width .3s}

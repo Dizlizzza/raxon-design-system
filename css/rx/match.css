@@ -1,0 +1,72 @@
+/* Match — connections between blocks (matching task). Code-only component: not in the Figma file yet.
+   Markup:
+   <div class="rx-match">
+     <div class="rx-match__terms">
+       <label class="q"><span>1. persona</span><select>…a–j…</select></label> …
+     </div>
+     <div class="rx-match__defs"><ol><li><b>a)</b> definition…</li> …</ol></div>
+   </div>
+   js/rx-match.js adds: svg.rx-match__lines (line + dot, --temp while dragging), .rx-match__term / .rx-match__def,
+   the slot (__letter, __remove), __num on definitions, __native on the select, __sheet + __option on phones.
+   Links are grey; the last made pair is .is-active (part colour). Hovering a card or a link (.rx-match__hit) makes
+   that link .is-active.is-hover, marks both cards .is-linked and drops the last-pair highlight.
+   States: term .is-paired · def .is-used · .is-picked (chosen first) · .is-over (drop target) ·
+   result .is-correct / .is-wrong (term, line, dot) · container .has-pick[data-pick="t|d"], .is-dragging */
+.rx-match{position:relative}
+.rx-match__lines{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:1}
+.rx-match__line{fill:none;stroke:var(--color-border-strong,var(--color-text-secondary));stroke-width:1.5;stroke-linecap:round;opacity:.45}
+.rx-match__line.is-active{stroke:var(--part);stroke-width:2.5;opacity:1}
+.rx-match__line.is-hover{stroke-width:3;opacity:1}
+.rx-match__hit{fill:none;stroke:transparent;stroke-width:14;stroke-linecap:round;pointer-events:stroke;cursor:pointer}
+.rx-match.is-dragging .rx-match__hit{pointer-events:none}
+.rx-match .rx-match__term.is-linked,.rx-match .rx-match__def.is-linked{border-color:var(--part)}
+.rx-match__line--temp{stroke:var(--part);stroke-dasharray:5 5;opacity:.8}
+.rx-match__dot{fill:var(--color-border-strong,var(--color-text-secondary));opacity:.6}
+.rx-match__dot.is-active,.rx-match__dot.is-correct,.rx-match__dot.is-wrong{opacity:1}
+.rx-match__dot.is-active{fill:var(--part)}
+.rx-match__line.is-correct{stroke:var(--color-text-success);opacity:.8}.rx-match__dot.is-correct{fill:var(--color-text-success)}
+.rx-match__line.is-wrong{stroke:var(--color-text-danger);opacity:.8}.rx-match__dot.is-wrong{fill:var(--color-text-danger)}
+/* items */
+.rx-match__term,.rx-match__def{position:relative;cursor:pointer;user-select:none;-webkit-user-select:none;font-family:var(--font-body);background:var(--color-bg-surface);border:1.5px solid var(--color-border-default);border-radius:var(--radius-l);min-height:44px;transition:border-color .15s,box-shadow .15s,background-color .15s;-webkit-tap-highlight-color:transparent}
+.rx-match__term{display:flex;align-items:center;gap:var(--spacing-s);flex-wrap:wrap;padding:9px 10px 9px 14px}
+.rx-match__term>span:first-child{flex:1;min-width:0;font-weight:600;font-size:15px;color:var(--color-text-primary)}
+.rx-match__def{display:flex;align-items:baseline;gap:var(--spacing-s);padding:9px 12px;font-size:15px;line-height:1.4;color:var(--color-text-primary)}
+.rx-match__def b{color:var(--part)}
+.rx-match__term:hover,.rx-match__def:hover{border-color:var(--part)}
+.rx-match__term:focus-visible,.rx-match__def:focus-visible{outline:none;box-shadow:0 0 0 3px var(--color-border-focus-ring)}
+.rx-match .is-picked,.rx-match .is-over{border-color:var(--part);background:var(--part-soft);box-shadow:0 0 0 3px color-mix(in srgb,var(--part) 25%,transparent)}
+.rx-match.has-pick[data-pick="t"] .rx-match__def:not(.is-used),.rx-match.has-pick[data-pick="d"] .rx-match__term:not(.is-paired){border-style:dashed}
+.rx-match.is-dragging,.rx-match.is-dragging *{cursor:grabbing!important}
+/* used definition: grey */
+.rx-match__def.is-used{background:var(--color-bg-pressed);border-color:transparent;color:var(--color-text-secondary)}
+.rx-match__def.is-used b{color:var(--color-text-secondary)}
+.rx-match__def.is-used:hover{border-color:var(--color-border-default)}
+.rx-match__def.is-used.is-picked,.rx-match__def.is-used.is-over{background:var(--part-soft);border-color:var(--part)}
+.rx-match__num{margin-left:auto;flex:none;align-self:center;min-width:22px;height:22px;padding:0 6px;border-radius:var(--radius-full);display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--part);color:#fff}
+.rx-match__num:empty{display:none}
+.rx-match__def.is-used .rx-match__num{background:var(--color-text-secondary)}
+/* term slot */
+.rx-match__native{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;overflow:hidden}
+.rx-match__slot{display:flex;align-items:center;gap:var(--spacing-xs)}
+.rx-match__letter{min-width:30px;height:30px;border-radius:var(--radius-m);display:grid;place-items:center;font-weight:700;font-size:14px;border:1.5px dashed var(--color-border-default);color:var(--color-text-secondary)}
+.rx-match__letter:empty::before{content:"?";font-weight:600}
+.rx-match__term.is-paired .rx-match__letter{border:0;background:var(--part);color:#fff}
+.rx-match__term.is-correct .rx-match__letter{background:var(--color-bg-success,var(--color-text-success))}
+.rx-match__term.is-wrong .rx-match__letter{background:var(--color-text-danger)}
+.rx-match__term.is-wrong:not(.is-paired) .rx-match__letter{background:transparent;border-color:var(--color-text-danger);color:var(--color-text-danger)}
+.rx-match__text{display:none}
+.rx-match__remove{display:none;width:26px;height:26px;border:0;border-radius:50%;background:transparent;color:var(--color-text-secondary);font-size:18px;line-height:1;cursor:pointer}
+.rx-match__remove:hover{background:var(--color-bg-pressed);color:var(--color-text-primary)}
+.rx-match__term.is-paired .rx-match__remove{display:grid;place-items:center}
+/* phone: definitions open in a sheet under the tapped term */
+.rx-match__sheet{display:grid;gap:6px;padding:var(--spacing-s);border-radius:var(--radius-l);background:var(--color-bg-page);border:1px solid var(--color-border-default);margin:-2px 0 4px}
+.rx-match__option{display:flex;gap:var(--spacing-s);align-items:baseline;text-align:left;width:100%;padding:10px 12px;border-radius:var(--radius-m);border:1.5px solid var(--color-border-default);background:var(--color-bg-surface);font:inherit;font-size:15px;line-height:1.35;color:var(--color-text-primary);cursor:pointer}
+.rx-match__option b{color:var(--part)}
+.rx-match__option.is-cur{border-color:var(--part);background:var(--part-soft)}
+.rx-match__option.is-used{background:var(--color-bg-pressed);border-color:transparent;color:var(--color-text-secondary)}
+.rx-match__option.is-used b{color:var(--color-text-secondary)}
+.rx-match__option i{margin-left:auto;font-style:normal;font-size:12px;font-weight:700;min-width:22px;height:22px;border-radius:var(--radius-full);display:grid;place-items:center;background:var(--color-border-default);color:var(--color-text-secondary);align-self:center}
+@media (max-width:700px){
+  .rx-match__defs{display:none}
+  .rx-match__term.is-paired .rx-match__text{display:block;flex-basis:100%;order:3;font-size:14px;line-height:1.35;color:var(--color-text-secondary)}
+}

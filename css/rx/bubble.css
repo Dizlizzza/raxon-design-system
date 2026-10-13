@@ -1,0 +1,17 @@
+/* Chat Bubble — Figma: Chat Bubble (Side: Them | Me). <div class="rx-bubble rx-bubble--me"><span class="rx-bubble__who">You</span>Text</div> */
+.rx-chat{display:grid;gap:10px}
+.rx-bubble{max-width:78%;padding:var(--spacing-sm) var(--spacing-m);border-radius:16px;background:var(--color-bg-page);display:grid;gap:3px}
+.rx-bubble__who{font-size:12.5px;font-weight:600;color:var(--color-text-secondary)}
+.rx-bubble--me{justify-self:end;background:var(--part-soft);border-bottom-right-radius:var(--radius-s)}
+.rx-bubble--me .rx-bubble__who{color:var(--part)}
+.rx-bubble--them{border-bottom-left-radius:var(--radius-s)}
+@media (max-width:560px){.rx-bubble{max-width:92%}}
+
+/* Avatars: <div class="rx-chat rx-chat--avatars"> + <img class="rx-bubble__avatar"> inside each bubble */
+.rx-chat--avatars .rx-bubble{position:relative}
+.rx-chat--avatars .rx-bubble--them{margin-left:52px}
+.rx-chat--avatars .rx-bubble--me{margin-right:52px}
+.rx-bubble__avatar{position:absolute;bottom:0;width:40px;height:40px;border-radius:50%}
+.rx-bubble--them .rx-bubble__avatar{left:-52px}
+.rx-bubble--me .rx-bubble__avatar{right:-52px}
+@media (max-width:560px){.rx-chat--avatars .rx-bubble--them{margin-left:44px}.rx-chat--avatars .rx-bubble--me{margin-right:44px}.rx-bubble__avatar{width:34px;height:34px}.rx-bubble--them .rx-bubble__avatar{left:-44px}.rx-bubble--me .rx-bubble__avatar{right:-44px}}

@@ -1,0 +1,15 @@
+/* Accordion — Figma: Accordion (Size: M | S; Open: False | True)
+   <details class="rx-accordion rx-accordion--m"><summary class="rx-accordion__summary">Вопрос</summary><div class="rx-accordion__body"><p>Ответ</p></div></details> */
+.rx-accordion{border:1px solid var(--color-border-default)}
+.rx-accordion__summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:var(--spacing-m);font-weight:600}
+.rx-accordion__summary::-webkit-details-marker{display:none}
+.rx-accordion__summary:focus-visible{outline:3px solid var(--color-border-focus);outline-offset:2px}
+.rx-accordion--m{background:var(--color-bg-surface);border-radius:var(--radius-xl);padding:0 var(--spacing-ml)}
+.rx-accordion--m .rx-accordion__summary{padding:18px 0;font-size:16.5px}
+.rx-accordion--m .rx-accordion__summary::after{content:"+";font-family:var(--font-mono);color:var(--color-text-brand);font-size:20px;line-height:1}
+.rx-accordion--m[open] .rx-accordion__summary::after{content:"–"}
+.rx-accordion--m .rx-accordion__body{padding-bottom:18px;color:var(--color-text-secondary);max-width:68ch}
+.rx-accordion--s{border-radius:var(--radius-l);padding:0 var(--spacing-m)}
+.rx-accordion--s .rx-accordion__summary{padding:var(--spacing-sm) 0;color:var(--part)}
+.rx-accordion--s[open]{padding-bottom:var(--spacing-sm)}
+.rx-accordion--s ul{margin:0;padding-left:var(--spacing-ml);display:grid;gap:6px}

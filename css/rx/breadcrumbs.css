@@ -1,0 +1,5 @@
+/* Breadcrumbs — Figma: Breadcrumbs. <nav class="rx-breadcrumbs" aria-label="Навигация"><a href="index.html">Главная</a><span>›</span><span aria-current="page">Глава 1</span></nav> */
+.rx-breadcrumbs{display:flex;flex-wrap:wrap;gap:var(--spacing-s);font-size:14px;color:var(--color-text-secondary);margin-bottom:var(--spacing-ml)}
+.rx-breadcrumbs a{text-decoration:none}
+.rx-breadcrumbs a:hover{color:var(--color-text-primary)}
+.rx-breadcrumbs [aria-current]{color:var(--color-text-primary);font-weight:600}

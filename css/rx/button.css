@@ -1,0 +1,22 @@
+/* Button — Figma: Button (Style: Primary | Secondary | Inverse | Text; Size: M 48 | S 40 | XS 32; State: Default | Hover | Pressed | Disabled | Loading)
+   <a|button class="rx-button rx-button--primary rx-button--m">Label</a>   Loading: .is-loading + aria-busy="true" */
+.rx-button{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-s);border:0;border-radius:var(--radius-l);font-family:var(--font-body);font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .15s,border-color .15s,color .15s}
+.rx-button:focus-visible{outline:3px solid var(--color-border-focus);outline-offset:2px}
+.rx-button--m{height:48px;padding:0 22px;font-size:16px}
+.rx-button--s{height:40px;padding:0 16px;font-size:15px}
+.rx-button--xs{height:32px;padding:0 var(--spacing-s);font-size:14px;border-radius:var(--radius-m)}
+.rx-button--primary{background:var(--color-bg-brand);color:var(--color-text-on-brand)}
+.rx-button--primary:hover{background:var(--color-bg-brand-hover)}
+.rx-button--primary:active{background:var(--color-bg-brand-pressed)}
+.rx-button--secondary{background:transparent;color:var(--color-text-primary);border:1.5px solid var(--color-border-default)}
+.rx-button--secondary:hover{border-color:var(--color-border-strong)}
+.rx-button--secondary:active{background:var(--color-bg-pressed);border-color:var(--color-border-strong)}
+.rx-button--inverse{background:var(--color-bg-surface);color:var(--color-text-brand)}
+.rx-button--inverse:hover{background:var(--color-bg-brand-soft)}
+.rx-button--text{background:transparent;color:var(--color-text-primary);padding-inline:var(--spacing-s)}
+.rx-button--text:hover{color:var(--color-text-brand)}
+.rx-button:disabled,.rx-button[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.rx-button.is-loading{color:transparent;position:relative;pointer-events:none}
+.rx-button.is-loading::after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-color:var(--color-text-on-brand) transparent var(--color-text-on-brand) var(--color-text-on-brand);animation:rx-spin .8s linear infinite}
+.rx-button--secondary.is-loading::after,.rx-button--text.is-loading::after{border-color:var(--color-text-primary) transparent var(--color-text-primary) var(--color-text-primary)}
+@keyframes rx-spin{to{transform:rotate(360deg)}}

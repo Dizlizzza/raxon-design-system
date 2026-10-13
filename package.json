@@ -1,0 +1,23 @@
+{
+  "name": "raxon-design-system",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Raxon Design System: tokens, CSS components, behaviour scripts and Storybook",
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static",
+    "sync": "node scripts/sync.mjs",
+    "sync:check": "node scripts/sync.mjs --check",
+    "tokens": "python3 tokens/gen_tokens.py tokens/tokens.json css/tokens.css"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.0",
+    "@storybook/addon-essentials": "^8.6.0",
+    "@storybook/blocks": "^8.6.0",
+    "@storybook/html": "^8.6.0",
+    "@storybook/html-vite": "^8.6.0",
+    "storybook": "^8.6.0",
+    "vite": "^6.0.0"
+  }
+}
