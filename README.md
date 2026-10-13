@@ -2,6 +2,8 @@
 
 Дизайн-система сайта учебника «English for UX/UI & Product Designers»: токены, CSS-компоненты, скрипты поведения и Storybook.
 
+**Storybook:** https://dizlizzza.github.io/raxon-design-system/ — обновляется автоматически после каждого push в `main`.
+
 - Источник правды по дизайну — Figma-файл [Raxon Design System](https://www.figma.com/design/9lBTYbT9dGLGaxuvorSktA/Raxon-Design-System).
 - Источник правды по коду — этот репозиторий. Сайт учебника хранит копии файлов и получает их командой `npm run sync`.
 - Описание токенов и компонентов — в [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md).
@@ -17,6 +19,7 @@
 | `tokens/` | Выгрузка переменных из Figma и генератор токенов |
 | `.storybook/`, `stories/` | Storybook (HTML + Vite) |
 | `scripts/sync.mjs` | Копирование файлов на сайт |
+| `.github/workflows/storybook.yml` | Автосборка Storybook и публикация на GitHub Pages |
 
 ## Первый запуск (один раз)
 
