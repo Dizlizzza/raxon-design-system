@@ -1,7 +1,8 @@
 // Raxon: tokens + base + all components — the same file every page of the site uses.
 import '@raxon/css/rx.css';
 
-/** Toolbar: theme and textbook part colour. */
+/** Toolbar: theme and accent colour (--part). */
+const ACCENTS = ['Blue', 'Violet', 'Green', 'Orange', 'Teal', 'Pink'];
 export const globalTypes = {
   theme: {
     description: 'Тема',
@@ -14,10 +15,10 @@ export const globalTypes = {
     },
   },
   part: {
-    description: 'Цвет части учебника (--part)',
+    description: 'Акцентный цвет компонентов (--part / --part-soft)',
     toolbar: {
-      title: 'Часть', icon: 'paintbrush', dynamicTitle: true,
-      items: [1, 2, 3, 4, 5, 6].map((n) => ({ value: String(n), title: `Part ${n}` })),
+      title: 'Акцент', icon: 'paintbrush', dynamicTitle: true,
+      items: ACCENTS.map((name, i) => ({ value: String(i + 1), title: name })),
     },
   },
 };

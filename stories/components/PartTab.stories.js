@@ -14,6 +14,6 @@ export default {
 export const Selected = {};
 export const Soon = { args: { part: 2, selected: false, soon: true } };
 export const AllParts = {
-  name: 'Все части',
+  name: 'Все цвета',
   render: () => `<div role="tablist" class="sb-stack">${PARTS.map(([n, t], i) => `<button type="button" role="tab" class="${cx('rx-part-tab', `rx-part-${i + 1}`, i > 0 && 'is-soon')}" aria-selected="${i === 0}"><span class="rx-part-tab__number">${n}</span><span class="rx-part-tab__name">${t}</span></button>`).join('')}</div>`,
 };
